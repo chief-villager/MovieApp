@@ -1,0 +1,67 @@
+﻿@page "/popularmovies"
+@inject TmdbClient TmdbClient
+
+
+
+<Search/>
+
+@if (movies != null)
+{
+
+
+    @foreach (var movie in movies.Results)
+        {
+
+            <div class="card" style="width: 28rem;">
+                <div class="card-body">
+                    <img src="https://image.tmdb.org/t/p/w400@(movie.BackdropPath)">
+                    <p></p>
+                    <h6 class="card-subtitle mb-2 text-muted">@movie.OriginalTitle (@movie.ReleaseDate)</h6>
+
+                    <p class="card-text">content.</p>
+
+                </div>
+            </div>
+
+
+        }
+
+
+
+    }
+
+
+    else
+    {
+    <p>Loading...</p>
+    }
+    <div class="button-container">
+    <button class="btn btn-primary mt-2" @onclick="PreviousPage">Previous</button>
+    <button class="btn btn-primary mt-2" @onclick="NextPage">Next</button>
+    </div>
+
+
+        @code {
+private MovieList movies;
+
+
+
+
+        protected override async Task OnInitializedAsync()
+        {
+            movies = await TmdbClient.GetPopularMovies();
+        }
+
+        private async Task NextPage()
+        {
+            movies = await TmdbClient.GetNextPage(movies.page + 1);
+            StateHasChanged();
+        }
+
+        private async Task PreviousPage()
+        {
+            movies = await TmdbClient.GetNextPage(movies.page - 1);
+            StateHasChanged();
+        }
+
+}

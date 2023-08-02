@@ -1,0 +1,124 @@
+/* _content/MovieApp/Pages/Search/Movies.razor.rz.scp.css */
+.card[b-b8xw9gp2ou] {
+
+    border: 1px solid red;
+    width: 10px;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.button-container[b-b8xw9gp2ou]{
+    margin-left: 13%;
+}
+/* _content/MovieApp/Pages/Search/Search.razor.rz.scp.css */
+button[b-gdzmrofgu2] {
+    background-color: red;
+    font-family: 'Courier New', Courier, monospace;
+
+
+}
+
+
+
+.title[b-gdzmrofgu2]{
+    width: 350px;
+}
+
+.card[b-gdzmrofgu2] {
+
+    border: 1px solid red;
+    width: 10px;
+    margin: 5%;
+
+
+
+
+}
+
+/* .container{
+
+display: flex;
+
+} */
+
+
+
+.flex-container[b-gdzmrofgu2]{
+    display: flex;
+    gap: 25px;
+    margin-left:10%
+}
+
+.button-container[b-gdzmrofgu2]{
+    margin-left: 13%;
+}
+/* _content/MovieApp/Shared/MainLayout.razor.rz.scp.css */
+/* _content/MovieApp/Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-1k4bmjwaep] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-1k4bmjwaep] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-1k4bmjwaep] {
+    font-size: 1.1rem;
+}
+
+.oi[b-1k4bmjwaep] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-1k4bmjwaep] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-1k4bmjwaep] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-1k4bmjwaep] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-1k4bmjwaep]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+.nav-item[b-1k4bmjwaep]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.nav-item[b-1k4bmjwaep]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-1k4bmjwaep] {
+        display: none;
+    }
+
+    .collapse[b-1k4bmjwaep] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+    
+    .nav-scrollable[b-1k4bmjwaep] {
+        /* Allow sidebar to scroll for tall menus */
+        height: calc(100vh - 3.5rem);
+        overflow-y: auto;
+    }
+}

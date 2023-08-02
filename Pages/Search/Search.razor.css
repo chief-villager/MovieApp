@@ -1,0 +1,41 @@
+button {
+    background-color: red;
+    font-family: 'Courier New', Courier, monospace;
+
+
+}
+
+
+
+.title{
+    width: 350px;
+}
+
+.card {
+
+    border: 1px solid red;
+    width: 10px;
+    margin: 5%;
+
+
+
+
+}
+
+/* .container{
+
+display: flex;
+
+} */
+
+
+
+.flex-container{
+    display: flex;
+    gap: 25px;
+    margin-left:10%
+}
+
+.button-container{
+    margin-left: 13%;
+}

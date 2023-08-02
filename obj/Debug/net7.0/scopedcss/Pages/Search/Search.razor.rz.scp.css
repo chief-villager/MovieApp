@@ -1,0 +1,41 @@
+button[b-gdzmrofgu2] {
+    background-color: red;
+    font-family: 'Courier New', Courier, monospace;
+
+
+}
+
+
+
+.title[b-gdzmrofgu2]{
+    width: 350px;
+}
+
+.card[b-gdzmrofgu2] {
+
+    border: 1px solid red;
+    width: 10px;
+    margin: 5%;
+
+
+
+
+}
+
+/* .container{
+
+display: flex;
+
+} */
+
+
+
+.flex-container[b-gdzmrofgu2]{
+    display: flex;
+    gap: 25px;
+    margin-left:10%
+}
+
+.button-container[b-gdzmrofgu2]{
+    margin-left: 13%;
+}

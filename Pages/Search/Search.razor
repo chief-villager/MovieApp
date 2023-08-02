@@ -1,0 +1,101 @@
+﻿@page "/search"
+@inject TmdbClient TmdbClient
+
+
+
+
+    <div class="form-group flex-container">
+
+            <input @bind="searchQuery" class="form-control title" placeholder="Enter movie title">
+
+            <button @onclick="SearchMovies" class="btn btn-primary mt-2">Search</button>
+
+    </div>
+
+
+@if (movies == null)
+{
+    <p></p>
+}
+else if (movies.Results.Count == 0)
+{
+    <p>No results found.</p>
+}
+else
+{
+    <p></p>
+
+    <div class="container">
+
+
+    @foreach (var movie in movies.Results)
+        {
+            @* <li id="title">@movie.OriginalTitle - (Popularity - @movie.Popularity)</li>
+    <img src="https://image.tmdb.org/t/p/w500@(movie.PosterPath)"> *@
+            @* <MudCard class="card" >
+
+
+    <MudCardContent >
+
+    <img src="https://image.tmdb.org/t/p/w500@(movie.PosterPath)">
+    <MudText Typo="Typo.h5">@movie.OriginalTitle (@movie.ReleaseDate)</MudText>
+    <MudText Typo="Typo.body2">Old paint found on a stone house door.</MudText>
+
+    </MudCardContent>
+
+    </MudCard> *@
+
+            <div class="card" style="width: 28rem; ">
+                <div class="card-body">
+                    <img src="https://image.tmdb.org/t/p/w400@(movie.BackdropPath)">
+                    <p> </p>
+                    <h6 class="card-subtitle mb-2 text-muted">@movie.OriginalTitle (@movie.ReleaseDate)</h6>
+
+
+
+                </div>
+            </div>
+
+        }
+    </div>
+ <div class="button-container">
+<button class="btn btn-primary mt-2" @onclick="PreviousPage">Previous</button>
+<button class="btn btn-primary mt-2" @onclick="NextPage">Next</button>
+</div>
+
+}
+
+
+
+
+@code {
+    private string searchQuery;
+    private MovieList movies; // Change the type to MovieList
+
+
+
+    private async Task SearchMovies()
+    {
+        MovieList response = await TmdbClient.SearchMovies(searchQuery); // Assign the MovieList object directly
+        if (response != null)
+        {
+            movies = response;
+        }
+    }
+
+    private async Task NextPage()
+    {
+       movies = await TmdbClient.GetNextPage(movies.page +1);
+       StateHasChanged();
+
+    }
+
+    private async Task PreviousPage()
+    {
+       movies = await TmdbClient.GetNextPage(movies.page -1);
+       StateHasChanged();
+
+
+    }
+
+}
